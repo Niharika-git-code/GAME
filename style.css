@@ -6,8 +6,22 @@ body{
     width: 200px;
     border-radius: 20%;
     border: 10px solid black ;
+    margin: 2rem;
 }
 .container{
     display: flex;
     justify-content: center;
+}
+.yellow{
+    background-color:  #f99b45; ;
+}
+.green{
+background-color: #819ff9;
+}
+
+.pink{
+background-color:  #63acc0; ;
+}
+.red{
+background-color: #d959d980;
 }
