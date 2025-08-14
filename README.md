@@ -24,7 +24,7 @@ A simple memory game .
 
 ##  📸 Screenshots
 
-![image alt]()
+![image alt](https://github.com/Niharika-git-code/GAME/blob/ebdfac7251649ff05cd3d997f8a3b8cf64afe559/ss.1.png)
 
 
 ## Run Locally
