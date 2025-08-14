@@ -15,6 +15,7 @@ document.addEventListener("keypress", function () {
 });
 
 function levelup() {
+    userseq=[];
     level++;
     h2.innerText = `level ${level}`
 let randIdx = Math.floor(Math.random()*3);
@@ -41,26 +42,35 @@ box.classList.remove("userflash");
 
 );
 }
-function checkAns (){
+function checkAns(idx) {
     // console.log("current level;",level);
-    let Idx = level -1;
-    if (userseq[Idx]=== gameseq[Idx]){
-        console.log("same value");
+ 
+    if (userseq[idx]=== gameseq[idx]){
+        if (userseq.length=== gameseq.length){
+            setTimeout(levelup ,1000);
+             }
     }else{
-         h2.innerText = `Game over! press any key to start the game `;
-
+         h2.innerHTML = `Game over!  Your score was<b>${level}</b> <br>press any key to start the game `;
+reset();
     }
 } 
 
 function btnpress(){
-    console.log(this);
+    // console.log(this);
     let box= this;
     userflash(box);
     usercolor = box.getAttribute("id");
   userseq.push(usercolor);
-  checkAns();
+  checkAns(userseq.length-1);
 }
 let allbtn = document.querySelectorAll(".box");
 for (box of allbtn){
 box.addEventListener("click", btnpress);
+}
+
+function reset(){
+    gameseq=[];
+    userseq =[];
+    started=false;
+    level =0;
 }
